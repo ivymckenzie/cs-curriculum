@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CoinPurse : MonoBehaviour
 {
-    public HUD hud; //make this private ?
+    public HUD hud; 
     void Start()
     {
         hud = FindObjectOfType<HUD>();

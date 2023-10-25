@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    public HUD hud; //make this private ?
-    private float healthTimer;
+    public HUD hud; 
+    private float _healthTimer;
     void Start()
     {
         hud = FindObjectOfType<HUD>();
-        healthTimer = 0;
+        _healthTimer = 0;
     }
     
     void Update()
@@ -21,14 +21,14 @@ public class HealthManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Spikes"))
         {
-            if (healthTimer <= 0)
+            if (_healthTimer <= 0)
             {
                 hud.health -= 1;
-                healthTimer = 1;
+                _healthTimer = 1;
             }
             else
             {
-                healthTimer -= Time.deltaTime;
+                _healthTimer -= Time.deltaTime;
             }
             
             

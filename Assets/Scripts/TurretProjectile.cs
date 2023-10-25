@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class TurretProjectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Player;
+    private Vector3 target;
+
     void Start()
     {
-        
+        target = Player.transform.position;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        Vector3.MoveTowards(transform.position,target.position)
     }
 }

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    private float turretTimer = 0;
+    private float _turretTimer = 0;
     public GameObject Turret_Projectile;
-    public GraphicsBuffer.Target Target;
+    public GameObject target;
 
     void Start()
     {
@@ -16,26 +16,23 @@ public class Turret : MonoBehaviour
     
     void Update()
     {
-        if (turretTimer <= 0)
+        
+    }
+
+    private void OnTriggerStay2D(CircleCollider2D other)
+    {
+        if (_turretTimer <= 0)
         {
-            if (Target != null)
+            if (other.gameObject.CompareTag("Player"))
             {
-                Instantiate(Turret_Projectile);
-                turretTimer = 3;
+                Instantiate(Turret_Projectile, transform.position, transform.rotation);
+                _turretTimer = 3;
             }
         }
         else
         {
-            turretTimer -= Time.deltaTime;
+            _turretTimer -= Time.deltaTime;
         }
-    }
-
-    private void OnTriggerEnter2D(CircleCollider2D other)
-    {
-        //if (other.gameObject.CompareTag("Player"))
-        //{
-           // Target = null;
-            //erm
-      //  }
+        
     }
 }
