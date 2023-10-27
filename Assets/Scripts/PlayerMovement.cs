@@ -14,6 +14,10 @@ public class CaveMovement : MonoBehaviour
     private float xVector;
     private float yVector;
 
+    private double _shootTimer = 0;
+
+    [SerializeField] public GameObject Turret_Projectile;
+
     public bool overWorld;
 
     void Start()
@@ -57,6 +61,20 @@ public class CaveMovement : MonoBehaviour
         xVector = xDirection * xSpeed * Time.deltaTime;
         yVector = yDirection * ySpeed * Time.deltaTime;
         transform.position = transform.position + new Vector3(xVector, yVector, 0);
+
+        if (_shootTimer <= 0)
+        {
+            if (Input.GetMouseButton(1))
+            {
+                Instantiate(Turret_Projectile, transform.position, transform.rotation);
+                _shootTimer = 0.5;
+            }
+        }
+        else
+        {
+            _shootTimer -= Time.deltaTime;
+        }
+        
         
     }
 }

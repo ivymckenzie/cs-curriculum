@@ -14,6 +14,6 @@ public class TurretProjectile : MonoBehaviour
     
     void Update()
     {
-        Vector3.MoveTowards(transform.position,target.position)
+      Vector3.MoveTowards(transform.position,target,5);
     }
 }
