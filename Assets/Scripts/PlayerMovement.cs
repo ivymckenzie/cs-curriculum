@@ -8,15 +8,17 @@ public class CaveMovement : MonoBehaviour
     private float xSpeed;
     private float ySpeed;
     
-    private float xDirection;
-    private float yDirection;
+    public float xDirection;
+    public float yDirection;
     
     private float xVector;
     private float yVector;
 
     private double _shootTimer = 0;
 
-    [SerializeField] public GameObject Turret_Projectile;
+    [SerializeField] public GameObject PlayerProjectile;
+    
+    public static CaveMovement cm; //logs class (script) 
 
     public bool overWorld;
 
@@ -66,7 +68,7 @@ public class CaveMovement : MonoBehaviour
         {
             if (Input.GetMouseButton(1))
             {
-                Instantiate(Turret_Projectile, transform.position, transform.rotation);
+                Instantiate(PlayerProjectile, transform.position, transform.rotation);
                 _shootTimer = 0.5;
             }
         }

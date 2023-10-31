@@ -5,15 +5,16 @@ using UnityEngine;
 public class TurretProjectile : MonoBehaviour
 {
     public GameObject Player;
-    private Vector3 target;
+    private Vector3 playerPos;
+    
 
     void Start()
     {
-        target = Player.transform.position;
+        playerPos = Player.transform.position;
     }
     
     void Update()
     {
-      Vector3.MoveTowards(transform.position,target,5);
+      Vector3.MoveTowards(transform.position,playerPos,5000);
     }
 }

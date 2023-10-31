@@ -6,8 +6,8 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private float _turretTimer = 0;
-    public GameObject EnemyProjectile;
-    private GameObject target;
+    [SerializeField] public GameObject EnemyProjectile;
+    private GameObject player;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class Turret : MonoBehaviour
     {
         if (_turretTimer <= 0)
         {
-            if (target != null)
+            if (player != null)
             {
                 Instantiate(EnemyProjectile, transform.position, transform.rotation);
                 _turretTimer = 3;
@@ -30,19 +30,19 @@ public class Turret : MonoBehaviour
         } 
     }
 
-    private void OnTriggerEnter2D(CircleCollider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            target = other.gameObject;
+            player = other.gameObject;
         }
     }
     
-    private void OnTriggerExit2D(CircleCollider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            target = null;
+            player = null;
         }
     }
 }

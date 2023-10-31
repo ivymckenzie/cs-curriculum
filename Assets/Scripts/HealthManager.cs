@@ -6,11 +6,10 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public HUD hud; 
-    private float _healthTimer;
+    private double _healthTimer = 0;
     void Start()
     {
         hud = FindObjectOfType<HUD>();
-        _healthTimer = 0;
     }
     
     void Update()
@@ -19,7 +18,7 @@ public class HealthManager : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Spikes"))
+        if (other.gameObject.CompareTag("Spikes") || other.gameObject.CompareTag("Projectile"))
         {
             if (_healthTimer <= 0)
             {

@@ -85238,6 +85238,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 412193027009803665, guid: 34448014912494d33b041af48acd0291,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 412193027009803667, guid: 34448014912494d33b041af48acd0291,
         type: 3}
       propertyPath: m_Name
@@ -85332,7 +85337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0944dd38666724bd9b3e0e6a5aa81b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Turret_Projectile: {fileID: 5790822057519619805, guid: cc54e7c5199fe4f288c5a72cea42d4b2,
+  xDirection: 0
+  yDirection: 0
+  PlayerProjectile: {fileID: 5790822057519619805, guid: cc54e7c5199fe4f288c5a72cea42d4b2,
     type: 3}
   overWorld: 0
 --- !u!114 &1750497386
@@ -85373,6 +85380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd985c794a97048cd924e65532949f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cm: {fileID: 0}
 --- !u!1 &1819408239
 GameObject:
   m_ObjectHideFlags: 0
@@ -85949,12 +85957,12 @@ PrefabInstance:
     - target: {fileID: 4668079526467658351, guid: fbdc99957549444bfba281e61d9d218c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.337208
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 4668079526467658351, guid: fbdc99957549444bfba281e61d9d218c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.523531
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 4668079526467658351, guid: fbdc99957549444bfba281e61d9d218c,
         type: 3}
