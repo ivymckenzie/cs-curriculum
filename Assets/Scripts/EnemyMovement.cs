@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public GameObject Player;
+    private Vector3 playerPos;
 
     void Start()
     {
-
+        
     }
     
     void Update()
     {
-        
+        playerPos = Player.transform.position;
+        Vector3.MoveTowards(transform.position,playerPos,5000);
     }
 
     private void OnTriggerEnter(Collider other)
