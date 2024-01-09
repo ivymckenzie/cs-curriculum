@@ -39809,6 +39809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1750497384}
+  healthPot: {fileID: 5516367871078686624, guid: c56b25e3e92074b1ea81c6c3a477bf88,
+    type: 3}
+  coin: {fileID: 3462362578362087066, guid: 69c7343f050914c7787bbbe42c07b5b8, type: 3}
 --- !u!1 &558832012
 GameObject:
   m_ObjectHideFlags: 0

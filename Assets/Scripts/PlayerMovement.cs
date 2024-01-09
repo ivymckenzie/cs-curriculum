@@ -15,6 +15,9 @@ public class CaveMovement : MonoBehaviour
     private float yVector;
 
     private double _shootTimer = 0;
+    
+    private double attackTimer = 0.8;
+    public static bool plyrAtttack;
 
     [SerializeField] public GameObject PlayerProjectile;
     
@@ -63,6 +66,26 @@ public class CaveMovement : MonoBehaviour
         xVector = xDirection * xSpeed * Time.deltaTime;
         yVector = yDirection * ySpeed * Time.deltaTime;
         transform.position = transform.position + new Vector3(xVector, yVector, 0);
+        
+        // check if attacking; 1 second delay
+        
+        if (attackTimer > 0)
+        {
+            attackTimer = attackTimer - 1 * Time.deltaTime;
+        }
+        
+        if (Input.GetMouseButton(0))
+        {
+            if (attackTimer <= 0)
+            {
+                plyrAtttack = true;
+                attackTimer = 0.8;
+            }
+            else
+            {
+                plyrAtttack = false;
+            }
+        }
 
         if (_shootTimer <= 0)
         {
@@ -76,6 +99,7 @@ public class CaveMovement : MonoBehaviour
         {
             _shootTimer -= Time.deltaTime;
         }
+        
         
         
     }

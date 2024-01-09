@@ -8,6 +8,7 @@ public class Platformer_Animator : MonoBehaviour
 
     Animator anim;
     SpriteRenderer sprite;
+    
 
 
     private void Start()
