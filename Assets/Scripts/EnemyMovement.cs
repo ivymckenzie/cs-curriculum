@@ -17,6 +17,12 @@ public class EnemyMovement : MonoBehaviour
     private float enemyDrop = 0;
     public GameObject healthPot;
     public GameObject coin;
+    public GameObject axe;
+    
+    
+    //follow
+    //private Collider startHitbox;
+    //private Collider alertHitbox;
     
     
 
@@ -41,6 +47,10 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // turn alert collider trigger on
+        //if (gameObject.CompareTag("StartHitbox"))
+        //{
+            
+        //}
     }
     private void OnTriggerStay(Collider other)
     {
@@ -54,28 +64,41 @@ public class EnemyMovement : MonoBehaviour
     //damage
     private void OnTriggerStay2D(Collider2D other)
     {
-            if (other.gameObject.CompareTag("Player"))
+        if (CaveMovement.plyrAtttack)
+        {
+            print(CaveMovement.plyrAtttack); //TESTTT
+        }
+        
+        
+        if (other.gameObject.CompareTag("Player") && ehealthTimer <= 0)
+        {
+            //make sure to add if plyrAttack == true l8r 
+            ehealth = ehealth - 1;
+            ehealthTimer = 1;
+            if (ehealth <= 0)
             {
-                //make sure to add if plyrAttack == true l8r bc it aint working & enemy following
-                if (ehealthTimer <= 0)
+                if (gameObject.CompareTag("Enemy"))
                 {
-                    ehealth = ehealth - 1;
-                    ehealthTimer = 1;
-                    if (ehealth <= 0)
+                    enemyDrop = Random.Range(0, 100);
+                    if (enemyDrop > 25 && enemyDrop < 50)
                     {
-                        enemyDrop = Random.Range(0, 100);
-                        if (enemyDrop > 25 && enemyDrop < 50)
-                        {
-                            Instantiate(healthPot, transform.position, transform.rotation);
-                        }
-                        if (enemyDrop > 50)
-                        {
-                            Instantiate(coin, transform.position, transform.rotation);
-                        }
-                        Destroy(gameObject);
+                        Instantiate(healthPot, transform.position, transform.rotation);
                     }
+                    if (enemyDrop > 50)
+                    {
+                        Instantiate(coin, transform.position, transform.rotation);
+                    }
+                    Destroy(gameObject);
                 }
+
+                else if (gameObject.CompareTag("AxeEnemy"))
+                {
+                    Instantiate(axe, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                }
+                        
             }
+        }
         
     }
 }

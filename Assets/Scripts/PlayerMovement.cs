@@ -61,6 +61,7 @@ public class CaveMovement : MonoBehaviour
 
     void Update()
     {
+        
         xDirection = Input.GetAxis("Horizontal");
         yDirection = Input.GetAxis("Vertical");
         xVector = xDirection * xSpeed * Time.deltaTime;
@@ -99,6 +100,8 @@ public class CaveMovement : MonoBehaviour
         {
             _shootTimer -= Time.deltaTime;
         }
+        
+       
         
         
         

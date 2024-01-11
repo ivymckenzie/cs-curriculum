@@ -37,5 +37,10 @@ public class HealthManager : MonoBehaviour
             hud.health ++;
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.CompareTag("Axe"))
+        {
+            hud.hasAxe = true;
+            Destroy(other.gameObject);
+        }
     }
 }

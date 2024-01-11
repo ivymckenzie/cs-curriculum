@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour
     public int health;
     public int coins;
     public int maxHealth;
+    public bool hasAxe;
     
     void Awake()
     {
