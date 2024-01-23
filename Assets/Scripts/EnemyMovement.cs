@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 playerPos;
 
     private float ehealthTimer;
-    private int ehealth = 2;
+    private int ehealth = 4;
     
     //drops
     private float enemyDrop = 0;

@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Vector3 = UnityEngine.Vector3;
 
 public class CaveMovement : MonoBehaviour
 {
@@ -10,6 +13,7 @@ public class CaveMovement : MonoBehaviour
     
     public float xDirection;
     public float yDirection;
+    public float jumpPressed;
     
     private float xVector;
     private float yVector;
@@ -24,12 +28,17 @@ public class CaveMovement : MonoBehaviour
     public static CaveMovement cm; //logs class (script) 
 
     public bool overWorld;
+    
+    //jump
+    private bool canJump;
+    private Rigidbody2D plyrRB;
 
     void Start()
     {
         //get scene
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
+        
 
         if (sceneName == "Start")
         {
@@ -48,15 +57,13 @@ public class CaveMovement : MonoBehaviour
         
         //movement
         xSpeed = 6;
-        // optional; contains perameters for overWorld movement
-        if (!overWorld)
-        {
-            ySpeed = 0;
-        }
-        else
+        if (overWorld)
         {
             ySpeed = xSpeed;
         }
+        plyrRB = GetComponent<Rigidbody2D>();
+
+
     }
 
     void Update()
@@ -64,17 +71,27 @@ public class CaveMovement : MonoBehaviour
         
         xDirection = Input.GetAxis("Horizontal");
         yDirection = Input.GetAxis("Vertical");
+        jumpPressed = Input.GetAxis("Vertical");
+        
         xVector = xDirection * xSpeed * Time.deltaTime;
         yVector = yDirection * ySpeed * Time.deltaTime;
+        
+        if (!overWorld)
+        {
+            if (jumpPressed > 1 && canJump == true)
+            {
+                plyrRB.velocity = new Vector3(plyrRB.velocity.x, 20, 0);
+            }
+        }
+        
         transform.position = transform.position + new Vector3(xVector, yVector, 0);
         
-        // check if attacking; 1 second delay
         
+        // check if attacking; 1 second delay
         if (attackTimer > 0)
         {
             attackTimer = attackTimer - 1 * Time.deltaTime;
         }
-        
         if (Input.GetMouseButton(0))
         {
             if (attackTimer <= 0)
@@ -100,10 +117,21 @@ public class CaveMovement : MonoBehaviour
         {
             _shootTimer -= Time.deltaTime;
         }
-        
-       
-        
-        
-        
+    
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (!overWorld && other.gameObject.CompareTag("PlatformCollision"))
+        {
+            canJump = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (!overWorld && other.gameObject.CompareTag("PlatformCollision"))
+        {
+            canJump = true;
+        }
     }
 }
