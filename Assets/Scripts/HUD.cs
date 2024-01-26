@@ -41,6 +41,5 @@ public class HUD : MonoBehaviour
     {
         coinText.text = "Coins: " + coins.ToString();
         healthText.text = "Health: " + health.ToString();
-
     }
 }

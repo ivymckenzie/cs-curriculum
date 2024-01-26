@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     private Vector3 target;
-    public CaveMovement cm;
+    private CaveMovement cm;
 
     //custom xvectors for movement
     private float xVector;

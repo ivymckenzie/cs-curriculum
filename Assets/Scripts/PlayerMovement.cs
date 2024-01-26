@@ -8,6 +8,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class CaveMovement : MonoBehaviour
 {
+    private HUD hud;
+    
     private float xSpeed;
     private float ySpeed;
     
@@ -32,6 +34,7 @@ public class CaveMovement : MonoBehaviour
     //jump
     private bool canJump;
     private Rigidbody2D plyrRB;
+    
 
     void Start()
     {
@@ -40,7 +43,7 @@ public class CaveMovement : MonoBehaviour
         string sceneName = currentScene.name;
         
 
-        if (sceneName == "Start")
+        if (sceneName == "Start" || sceneName == "Platformer")
         {
             overWorld = false;
         }
@@ -76,15 +79,18 @@ public class CaveMovement : MonoBehaviour
         xVector = xDirection * xSpeed * Time.deltaTime;
         yVector = yDirection * ySpeed * Time.deltaTime;
         
+        
         if (!overWorld)
         {
-            if (jumpPressed > 1 && canJump == true)
+            if (jumpPressed > 0 && canJump == true)
             {
-                plyrRB.velocity = new Vector3(plyrRB.velocity.x, 20, 0);
+                plyrRB.velocity = new Vector3(plyrRB.velocity.x, 6, 0);
             }
+            
         }
         
         transform.position = transform.position + new Vector3(xVector, yVector, 0);
+        
         
         
         // check if attacking; 1 second delay
@@ -94,16 +100,18 @@ public class CaveMovement : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            if (attackTimer <= 0)
+            if (attackTimer < 0)
             {
                 plyrAtttack = true;
-                attackTimer = 0.8;
+                
             }
             else
             {
                 plyrAtttack = false;
             }
         }
+        
+        
 
         if (_shootTimer <= 0)
         {
@@ -117,15 +125,31 @@ public class CaveMovement : MonoBehaviour
         {
             _shootTimer -= Time.deltaTime;
         }
+        
+        
     
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (!overWorld && other.gameObject.CompareTag("PlatformCollision"))
+        if (!overWorld)
         {
-            canJump = false;
+            if (other.gameObject.CompareTag("PlatformCollision"))
+            {
+                canJump = false;
+            }
+
+            if (other.gameObject.CompareTag("Gate"))
+            {
+                if (hud.hasAxe)
+                {
+                    Destroy(other.gameObject);
+                }
+                
+            }
         }
+        
+        
     }
     private void OnCollisionEnter2D(Collision2D other)
     {

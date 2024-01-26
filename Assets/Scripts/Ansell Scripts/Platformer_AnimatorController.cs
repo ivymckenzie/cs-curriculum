@@ -6,6 +6,8 @@ public class Platformer_Animator : MonoBehaviour
 {
     public bool IsAttacking { get; private set; }
 
+    public CaveMovement cm;
+
     Animator anim;
     SpriteRenderer sprite;
     

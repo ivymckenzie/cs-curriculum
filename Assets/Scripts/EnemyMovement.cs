@@ -66,7 +66,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (CaveMovement.plyrAtttack)
         {
-            print(CaveMovement.plyrAtttack); //TESTTT
+            //print(CaveMovement.plyrAtttack); //TESTTT
         }
         
         
