@@ -23,7 +23,7 @@ public class CaveMovement : MonoBehaviour
     private double _shootTimer = 0;
     
     private double attackTimer = 0.8;
-    public static bool plyrAtttack;
+    public bool plyrAtttack;
 
     [SerializeField] public GameObject PlayerProjectile;
     
@@ -144,6 +144,7 @@ public class CaveMovement : MonoBehaviour
                 if (hud.hasAxe)
                 {
                     Destroy(other.gameObject);
+                    print("YAY");
                 }
                 
             }

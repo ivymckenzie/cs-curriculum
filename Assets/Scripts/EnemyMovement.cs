@@ -7,7 +7,9 @@ using Random = UnityEngine.Random;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public GameObject Player;
+    private CaveMovement cm;
+    
+    private GameObject Player;
     private Vector3 playerPos;
 
     private float ehealthTimer;
@@ -21,54 +23,53 @@ public class EnemyMovement : MonoBehaviour
     
     
     //follow
+    private bool canChase;
+    
     //private Collider startHitbox;
     //private Collider alertHitbox;
-    
+
+    private float chaseSpeed = 0;
     
 
     void Start()
     {
         ehealthTimer = 1;
+        cm = FindObjectOfType<CaveMovement>();
+        
+        Player = GameObject.FindWithTag("Player");
     }
     
     void Update()
     {
-        playerPos = Player.transform.position;
-        Vector3.MoveTowards(transform.position,playerPos,5000);
+        if (canChase)
+        {
+            playerPos = Player.transform.position;
+            if (chaseSpeed < 5)
+            {
+                chaseSpeed += 10 * Time.deltaTime;
+            }
+            transform.position = Vector3.MoveTowards(transform.position,playerPos,chaseSpeed * Time.deltaTime);
+        }
+        
         
         if (ehealthTimer > 0)
         {
             ehealthTimer = ehealthTimer - 1 * Time.deltaTime;
         }
         
-        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // turn alert collider trigger on
-        //if (gameObject.CompareTag("StartHitbox"))
-        //{
-            
-        //}
+        if (other.gameObject.CompareTag("Player")) // not specific to either hitbox
+        {
+            canChase = true;
+        }
     }
-    private void OnTriggerStay(Collider other)
-    {
-        // follow player
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        // turn alert collider trigger off
-    }
-    
+
     //damage
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (CaveMovement.plyrAtttack)
-        {
-            //print(CaveMovement.plyrAtttack); //TESTTT
-        }
-        
         
         if (other.gameObject.CompareTag("Player") && ehealthTimer <= 0)
         {
@@ -77,28 +78,38 @@ public class EnemyMovement : MonoBehaviour
             ehealthTimer = 1;
             if (ehealth <= 0)
             {
-                if (gameObject.CompareTag("Enemy"))
+                if (cm.plyrAtttack)
                 {
-                    enemyDrop = Random.Range(0, 100);
-                    if (enemyDrop > 25 && enemyDrop < 50)
+                    if (gameObject.CompareTag("Enemy"))
                     {
-                        Instantiate(healthPot, transform.position, transform.rotation);
+                        enemyDrop = Random.Range(0, 100);
+                        if (enemyDrop > 25 && enemyDrop < 50)
+                        {
+                            Instantiate(healthPot, transform.position, transform.rotation);
+                        }
+                        if (enemyDrop > 50)
+                        {
+                            Instantiate(coin, transform.position, transform.rotation);
+                        }
+                        Destroy(gameObject);
                     }
-                    if (enemyDrop > 50)
-                    {
-                        Instantiate(coin, transform.position, transform.rotation);
-                    }
-                    Destroy(gameObject);
-                }
 
-                else if (gameObject.CompareTag("AxeEnemy"))
-                {
-                    Instantiate(axe, transform.position, transform.rotation);
-                    Destroy(gameObject);
+                    else if (gameObject.CompareTag("AxeEnemy"))
+                    {
+                        Instantiate(axe, transform.position, transform.rotation);
+                        Destroy(gameObject);
+                    }
                 }
-                        
             }
         }
-        
     }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            canChase = false;
+        }
+    }
+    
 }

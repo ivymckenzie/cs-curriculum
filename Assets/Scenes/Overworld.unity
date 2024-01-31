@@ -123,6 +123,73 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &101040612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101040613}
+  - component: {fileID: 101040614}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &101040613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101040612}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -37.21, y: -3.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 287773805}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &101040614
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101040612}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
 --- !u!1001 &186509170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,6 +511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 101040613}
   - {fileID: 1861919207}
   - {fileID: 1665360716}
   - {fileID: 1270322012}
@@ -39942,7 +40010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a68b9e12b9644baf9d883bc65c28329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1750497384}
   healthPot: {fileID: 5516367871078686624, guid: c56b25e3e92074b1ea81c6c3a477bf88,
     type: 3}
   coin: {fileID: 3462362578362087066, guid: 69c7343f050914c7787bbbe42c07b5b8, type: 3}
@@ -40627,7 +40694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a68b9e12b9644baf9d883bc65c28329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1750497384}
   healthPot: {fileID: 5516367871078686624, guid: c56b25e3e92074b1ea81c6c3a477bf88,
     type: 3}
   coin: {fileID: 3462362578362087066, guid: 69c7343f050914c7787bbbe42c07b5b8, type: 3}
@@ -41021,7 +41087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a68b9e12b9644baf9d883bc65c28329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1750497384}
   healthPot: {fileID: 5516367871078686624, guid: c56b25e3e92074b1ea81c6c3a477bf88,
     type: 3}
   coin: {fileID: 3462362578362087066, guid: 69c7343f050914c7787bbbe42c07b5b8, type: 3}
@@ -41268,7 +41333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a68b9e12b9644baf9d883bc65c28329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1750497384}
   healthPot: {fileID: 5516367871078686624, guid: c56b25e3e92074b1ea81c6c3a477bf88,
     type: 3}
   coin: {fileID: 3462362578362087066, guid: 69c7343f050914c7787bbbe42c07b5b8, type: 3}
@@ -86540,6 +86604,7 @@ MonoBehaviour:
   xDirection: 0
   yDirection: 0
   jumpPressed: 0
+  plyrAtttack: 0
   PlayerProjectile: {fileID: 5790822057519619805, guid: cc54e7c5199fe4f288c5a72cea42d4b2,
     type: 3}
   overWorld: 0
@@ -86909,7 +86974,7 @@ GameObject:
   - component: {fileID: 1861919208}
   m_Layer: 0
   m_Name: Collision Door Removed
-  m_TagString: Gate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

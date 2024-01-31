@@ -15,6 +15,8 @@ public class PlayerProjectile : MonoBehaviour
     
     void Start()
     {
+        cm = FindObjectOfType<CaveMovement>();
+        
         xVector = cm.xDirection * 10 * Time.deltaTime;
         yVector = cm.yDirection * 10 * Time.deltaTime;
     }

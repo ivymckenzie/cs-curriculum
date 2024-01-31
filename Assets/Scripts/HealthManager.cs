@@ -18,7 +18,7 @@ public class HealthManager : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Spikes") || other.gameObject.CompareTag("Projectile"))
+        if (other.gameObject.CompareTag("Spikes"))
         {
             if (_healthTimer <= 0)
             {
