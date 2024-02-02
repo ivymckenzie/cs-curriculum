@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 playerPos;
 
     private float ehealthTimer;
-    private int ehealth = 4;
+    private int ehealth = 5;
     
     //drops
     private float enemyDrop = 0;
@@ -21,6 +21,8 @@ public class EnemyMovement : MonoBehaviour
     public GameObject coin;
     public GameObject axe;
     
+    //enemy dmg color
+    private Color dmgColor;
     
     //follow
     private bool canChase;
@@ -37,10 +39,14 @@ public class EnemyMovement : MonoBehaviour
         cm = FindObjectOfType<CaveMovement>();
         
         Player = GameObject.FindWithTag("Player");
+        dmgColor = gameObject.GetComponentInChildren<Color>();
     }
     
     void Update()
     {
+        //TEST
+        print(dmgColor);
+        
         if (canChase)
         {
             playerPos = Player.transform.position;
@@ -73,9 +79,11 @@ public class EnemyMovement : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player") && ehealthTimer <= 0)
         {
-            //make sure to add if plyrAttack == true l8r 
+            
             ehealth = ehealth - 1;
             ehealthTimer = 1;
+            dmgColor = Color.red;
+            
             if (ehealth <= 0)
             {
                 if (cm.plyrAtttack)
@@ -109,6 +117,7 @@ public class EnemyMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canChase = false;
+            chaseSpeed = 0;
         }
     }
     

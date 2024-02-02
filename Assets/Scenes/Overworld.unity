@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 101040614}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,8 +155,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 287773805}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &101040614
-CircleCollider2D:
+--- !u!61 &101040614
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -188,8 +188,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 3
+  m_Size: {x: 5, y: 5}
+  m_EdgeRadius: 0
 --- !u!1001 &186509170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86608,6 +86618,7 @@ MonoBehaviour:
   PlayerProjectile: {fileID: 5790822057519619805, guid: cc54e7c5199fe4f288c5a72cea42d4b2,
     type: 3}
   overWorld: 0
+  rayLength: -1
 --- !u!114 &1750497386
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 public class CaveMovement : MonoBehaviour
@@ -34,6 +35,7 @@ public class CaveMovement : MonoBehaviour
     //jump
     private bool canJump;
     private Rigidbody2D plyrRB;
+    public float rayLength;
     
 
     void Start()
@@ -79,18 +81,17 @@ public class CaveMovement : MonoBehaviour
         xVector = xDirection * xSpeed * Time.deltaTime;
         yVector = yDirection * ySpeed * Time.deltaTime;
         
-        
+        //raycast
+        canJump = Physics2D.Raycast(transform.position, Vector2.down, rayLength);
         if (!overWorld)
         {
             if (jumpPressed > 0 && canJump == true)
             {
                 plyrRB.velocity = new Vector3(plyrRB.velocity.x, 6, 0);
             }
-            
         }
         
         transform.position = transform.position + new Vector3(xVector, yVector, 0);
-        
         
         
         // check if attacking; 1 second delay
@@ -100,15 +101,7 @@ public class CaveMovement : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            if (attackTimer < 0)
-            {
-                plyrAtttack = true;
-                
-            }
-            else
-            {
-                plyrAtttack = false;
-            }
+            plyrAtttack = true;
         }
         
         
@@ -134,17 +127,11 @@ public class CaveMovement : MonoBehaviour
     {
         if (!overWorld)
         {
-            if (other.gameObject.CompareTag("PlatformCollision"))
-            {
-                canJump = false;
-            }
-
             if (other.gameObject.CompareTag("Gate"))
             {
                 if (hud.hasAxe)
                 {
                     Destroy(other.gameObject);
-                    print("YAY");
                 }
                 
             }
@@ -154,9 +141,6 @@ public class CaveMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!overWorld && other.gameObject.CompareTag("PlatformCollision"))
-        {
-            canJump = true;
-        }
+     
     }
 }
