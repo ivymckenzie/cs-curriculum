@@ -87,7 +87,7 @@ public class CaveMovement : MonoBehaviour
         {
             if (jumpPressed > 0 && canJump == true)
             {
-                plyrRB.velocity = new Vector3(plyrRB.velocity.x, 6, 0);
+                plyrRB.velocity = new Vector3(plyrRB.velocity.x, 7, 0);
             }
         }
         
