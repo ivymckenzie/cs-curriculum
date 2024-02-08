@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Vector2 = UnityEngine.Vector2;
@@ -36,7 +37,7 @@ public class CaveMovement : MonoBehaviour
     private bool canJump;
     private Rigidbody2D plyrRB;
     public float rayLength;
-    
+    public float jumpforce;
 
     void Start()
     {
@@ -87,7 +88,7 @@ public class CaveMovement : MonoBehaviour
         {
             if (jumpPressed > 0 && canJump == true)
             {
-                plyrRB.velocity = new Vector3(plyrRB.velocity.x, 7, 0);
+                plyrRB.velocity = new Vector3(plyrRB.velocity.x, jumpforce, 0);
             }
         }
         
