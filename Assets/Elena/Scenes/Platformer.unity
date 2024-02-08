@@ -6020,7 +6020,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.96, y: -0.82, z: 0.18030655}
-  m_LocalScale: {x: 48, y: 48, z: 48}
+  m_LocalScale: {x: 87, y: 87, z: 87}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
