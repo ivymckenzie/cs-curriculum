@@ -186,7 +186,6 @@ MonoBehaviour:
   PlayerProjectile: {fileID: 0}
   overWorld: 0
   rayLength: 0.6
-  jumpForce: 7
 --- !u!1001 &288654591
 PrefabInstance:
   m_ObjectHideFlags: 0
