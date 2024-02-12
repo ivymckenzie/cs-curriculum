@@ -14,7 +14,7 @@ TagManager:
   - StartHitbox
   - AlertHitbox
   - PlatformCollision
-  - Gate
+  - Wind
   layers:
   - Default
   - TransparentFX

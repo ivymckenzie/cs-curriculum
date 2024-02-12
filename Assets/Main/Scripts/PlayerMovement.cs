@@ -38,7 +38,9 @@ public class CaveMovement : MonoBehaviour
     private Rigidbody2D plyrRB;
     public float rayLength;
     public float jumpforce;
-
+   
+    //wind
+    public float backwardForce;
     void Start()
     {
         //get scene
@@ -137,11 +139,14 @@ public class CaveMovement : MonoBehaviour
                 
             }
         }
-        
-        
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-     
+        if (collision.gameObject.CompareTag("Wind"))
+        {
+            xVector = xDirection * -xSpeed * Time.deltaTime;
+        }
     }
+
 }
