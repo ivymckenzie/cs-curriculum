@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Fan : MonoBehaviour
@@ -5,7 +6,9 @@ public class Fan : MonoBehaviour
 
     private bool inRange;
     public GameObject Wind;
-    
+
+    private float shootCooldown;
+    public float cooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +18,18 @@ public class Fan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange = true)
+
+        shootCooldown -= Time.deltaTime;
+        if (shootCooldown <= 0)
         {
-            Instantiate(Wind, transform.position, transform.rotation);
+            if (inRange = true)
+            {
+                Instantiate(Wind, transform.position, transform.rotation);
+
+                shootCooldown = cooldown;
+            }
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,4 +47,6 @@ public class Fan : MonoBehaviour
             inRange = false;
         }
     }
+
+   
 }
