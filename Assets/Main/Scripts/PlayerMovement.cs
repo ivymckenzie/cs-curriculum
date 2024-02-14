@@ -102,9 +102,17 @@ public class CaveMovement : MonoBehaviour
         {
             attackTimer = attackTimer - 1 * Time.deltaTime;
         }
+        else
+        {
+            plyrAtttack = false;
+        }
         if (Input.GetMouseButton(0))
         {
-            plyrAtttack = true;
+            if (attackTimer <= 0)
+            {
+                plyrAtttack = true;
+                attackTimer = 0.8;
+            }
         }
         
         
