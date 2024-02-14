@@ -6258,6 +6258,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 783278492}
+    - targetCorrespondingSourceObject: {fileID: 7386698514500486556, guid: cddc0eae8679c4344b7e477729e7843b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 783278496}
   m_SourcePrefab: {fileID: 100100000, guid: cddc0eae8679c4344b7e477729e7843b, type: 3}
 --- !u!1 &783278491 stripped
 GameObject:
@@ -6311,7 +6315,7 @@ MonoBehaviour:
   overWorld: 0
   rayLength: 0.6
   jumpforce: 7
-  backwardForce: 0
+  knockbackPower: 0
 --- !u!114 &783278495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6324,6 +6328,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9311943f1d14bf793895fd9ad0157d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &783278496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783278491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d47f78d2f77b431bae9f8d5f7d6f91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinpurse: {fileID: 0}
+  healthmanager: {fileID: 0}
+  coinText: {fileID: 0}
+  healthText: {fileID: 0}
+  health: 0
+  coins: 0
+  maxHealth: 0
+  hasAxe: 0
 --- !u!1 &839819446
 GameObject:
   m_ObjectHideFlags: 0
