@@ -40,7 +40,7 @@ public class CaveMovement : MonoBehaviour
     public float jumpforce;
    
     //wind
-    public float backwardForce;
+    public float knockbackPower;
     void Start()
     {
         //get scene
@@ -153,7 +153,14 @@ public class CaveMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wind"))
         {
-            xVector = xDirection * -xSpeed * Time.deltaTime;
+            if (collision.gameObject.CompareTag("KnockbackTrigger"))
+            {
+                // Calculate the knockback direction
+                Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+
+                // Apply the knockback force
+                plyrRB.AddForce(knockbackDirection * knockbackPower, ForceMode2D.Impulse);
+            }
         }
     }
 

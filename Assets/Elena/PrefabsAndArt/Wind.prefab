@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2642404992991393904}
   - component: {fileID: 8377523877004123617}
   - component: {fileID: 7811772014849206851}
+  - component: {fileID: 4256221845287962892}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Wind
@@ -47,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7662c274e1b437ca5cf4c3bf1722c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7386698514500486556, guid: cddc0eae8679c4344b7e477729e7843b, type: 3}
   speed: 4
+  rb: {fileID: 0}
 --- !u!212 &-2642404992991393904
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -173,3 +174,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &4256221845287962892
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076721824059861022}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.16

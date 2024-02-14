@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="be710355-fb41-4ff2-a7e5-24ccc81b9cd4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Elena/PrefabsAndArt/Wind.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/PrefabsAndArt/Wind.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Elena/PrefabsAndArt/Wind.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/PrefabsAndArt/Wind.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/Fan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scripts/Fan.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/Wind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scripts/Wind.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/Wind.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/Wind.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Main/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scripts/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,8 @@
       <workItem from="1707424923938" duration="938000" />
       <workItem from="1707426007527" duration="18000" />
       <workItem from="1707427248063" duration="2135000" />
-      <workItem from="1707770764511" duration="3734000" />
+      <workItem from="1707770764511" duration="3802000" />
+      <workItem from="1707942651532" duration="2896000" />
     </task>
     <servers />
   </component>
