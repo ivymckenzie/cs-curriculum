@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -42,5 +44,20 @@ public class HealthManager : MonoBehaviour
             hud.hasAxe = true;
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.CompareTag("FatalSpikes"))
+        {
+            Death();
+        }
+
+        if (hud.health =< 0)
+        {
+            
+        }
+    }
+
+    private void Death()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
