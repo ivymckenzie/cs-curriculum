@@ -15,6 +15,7 @@ TagManager:
   - AlertHitbox
   - PlatformCollision
   - Wind
+  - FatalSpikes
   layers:
   - Default
   - TransparentFX
