@@ -14,8 +14,7 @@ public class FalseWall : MonoBehaviour
     
     void Update()
     {
-        //TEST
-        print(cm.plyrAtttack);
+     
     }
 
     private void OnCollisionStay2D(Collision2D other)
