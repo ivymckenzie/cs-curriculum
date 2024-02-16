@@ -7,7 +7,8 @@
     <list default="true" id="be710355-fb41-4ff2-a7e5-24ccc81b9cd4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scripts/BossMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scenes/Platformer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scenes/Platformer.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <workItem from="1707942651532" duration="3709000" />
       <workItem from="1708116279450" duration="26000" />
       <workItem from="1708116377156" duration="46000" />
-      <workItem from="1708116468702" duration="2511000" />
+      <workItem from="1708116468702" duration="3214000" />
     </task>
     <servers />
   </component>

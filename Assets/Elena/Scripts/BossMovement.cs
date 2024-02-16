@@ -29,10 +29,11 @@ public class Boss : MonoBehaviour
     {
       
        hit = Physics2D.Raycast(transform.position, moveDirection, raylength);
-
+       
        if (hit)
        {
            moveDirection = Random.insideUnitCircle.normalized;
+           
        }
     }
 
