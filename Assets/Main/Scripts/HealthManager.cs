@@ -50,7 +50,7 @@ public class HealthManager : MonoBehaviour
             Death();
         }
 
-        if (hud.health =< 0)
+        if (hud.health <= 0)
         {
             
         }
