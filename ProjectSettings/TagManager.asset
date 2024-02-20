@@ -16,6 +16,7 @@ TagManager:
   - PlatformCollision
   - Wind
   - FatalSpikes
+  - Platform2
   layers:
   - Default
   - TransparentFX
