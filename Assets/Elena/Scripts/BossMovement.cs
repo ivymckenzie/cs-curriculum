@@ -14,8 +14,11 @@ public class Boss : MonoBehaviour
     private Rigidbody2D rb;
 
     private RaycastHit2D hit;
-
     public float raylength;
+
+    private float fallingrocks;
+
+    private GameObject rock;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +36,19 @@ public class Boss : MonoBehaviour
        if (hit)
        {
            moveDirection = Random.insideUnitCircle.normalized;
+           fallingrocks = Random.Range(1, 4);
+       }
+
+       if (fallingrocks == 1)
+       {
+           Instantiate(rock, transform.position, transform.rotation);
+       }
+
+       if (fallingrocks > 1)
+       {
            
        }
+      
     }
 
     private void FixedUpdate()
