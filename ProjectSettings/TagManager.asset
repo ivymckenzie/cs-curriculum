@@ -17,6 +17,7 @@ TagManager:
   - Wind
   - FatalSpikes
   - Platform2
+  - Rock
   layers:
   - Default
   - TransparentFX

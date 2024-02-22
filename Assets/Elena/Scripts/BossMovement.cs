@@ -18,13 +18,17 @@ public class Boss : MonoBehaviour
 
     private float fallingrocks;
 
-    private GameObject rock;
+    public GameObject rock;
+    
+    public Transform rockpoint;
+
+    public Transform Rockpoint;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         moveDirection = Random.insideUnitCircle.normalized;
-
+        
     }
 
     // Update is called once per frame
@@ -36,19 +40,10 @@ public class Boss : MonoBehaviour
        if (hit)
        {
            moveDirection = Random.insideUnitCircle.normalized;
-           fallingrocks = Random.Range(1, 4);
+           Instantiate(rock, rockpoint.position, Quaternion.identity);
+           print("rocks");
        }
-
-       if (fallingrocks == 1)
-       {
-           Instantiate(rock, transform.position, transform.rotation);
-       }
-
-       if (fallingrocks > 1)
-       {
-           
-       }
-      
+       
     }
 
     private void FixedUpdate()

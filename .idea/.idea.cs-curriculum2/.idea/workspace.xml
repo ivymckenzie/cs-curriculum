@@ -8,8 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scripts/BossMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/FallingRocks.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/FallingRocks.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/Rocks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scripts/Rocks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Artwork/Platformer/Sliced/CavesTileSet/MainLev2.0_46.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Artwork/Platformer/Sliced/CavesTileSet/MainLev2.0_46.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scenes/Platformer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scenes/Platformer.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scripts/HealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scripts/HealthManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +106,9 @@
       <workItem from="1708116377156" duration="46000" />
       <workItem from="1708116483616" duration="1345000" />
       <workItem from="1708460455142" duration="45000" />
-      <workItem from="1708460695002" duration="1423000" />
+      <workItem from="1708460695002" duration="1476000" />
+      <workItem from="1708633226105" duration="3000" />
+      <workItem from="1708633266867" duration="4369000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -52,12 +53,21 @@ public class HealthManager : MonoBehaviour
 
         if (hud.health <= 0)
         {
-            
+            Death();
         }
+        
     }
 
     private void Death()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void  OnCollisionEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Rock"))
+        {
+            hud.health -= 2;
+        }
     }
 }
