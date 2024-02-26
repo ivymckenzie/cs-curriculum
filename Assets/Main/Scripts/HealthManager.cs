@@ -19,7 +19,7 @@ public class HealthManager : MonoBehaviour
     {
         
     }
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Spikes") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Projectile"))
         {
@@ -48,7 +48,12 @@ public class HealthManager : MonoBehaviour
 
         if (other.gameObject.CompareTag("FatalSpikes"))
         {
-            Death();
+            hud.health -= 5;
+        }
+
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            hud.health -= 2;
         }
 
         if (hud.health <= 0)

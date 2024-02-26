@@ -8,9 +8,12 @@ public class Chest : MonoBehaviour
     public Sprite openChest;
 
     private bool chestOpen;
+    private GameObject coin;
+    private float offset;
     void Start()
     {
         chestSprite = gameObject.GetComponent<SpriteRenderer>();
+    
     }
     
     void Update()
@@ -23,6 +26,8 @@ public class Chest : MonoBehaviour
         {
             chestSprite.sprite = openChest;
             chestOpen = true;
+            Destroy(gameObject);
+            Instantiate(coin, transform.position , transform.rotation);
         }
     }
 }

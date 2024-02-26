@@ -18,6 +18,7 @@ TagManager:
   - FatalSpikes
   - Platform2
   - Rock
+  - Boss
   layers:
   - Default
   - TransparentFX

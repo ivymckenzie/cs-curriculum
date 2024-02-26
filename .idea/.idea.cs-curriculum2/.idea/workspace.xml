@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="be710355-fb41-4ff2-a7e5-24ccc81b9cd4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.cs-curriculum2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scenes/Platformer.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scripts/BossMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Elena/Scripts/Rocks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Elena/Scripts/Rocks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Main/Artwork/Platformer/Sliced/CavesTileSet/MainLev2.0_46.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Artwork/Platformer/Sliced/CavesTileSet/MainLev2.0_46.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Main/Scenes/Platformer.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scenes/Platformer.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scripts/Chest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scripts/Chest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Main/Scripts/HealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scripts/HealthManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Main/Scripts/VerticalPlatform1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Main/Scripts/VerticalPlatform1.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +106,7 @@
       <workItem from="1708460695002" duration="1476000" />
       <workItem from="1708633226105" duration="3000" />
       <workItem from="1708633266867" duration="4369000" />
+      <workItem from="1708979770843" duration="1773000" />
     </task>
     <servers />
   </component>
